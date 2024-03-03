@@ -2,15 +2,18 @@ package classroom;
 
 public class Persona {
 
-    final long cedula;
+    public long cedula;  // Quitamos el final y cambiamos su visibilidad debido al llamado que se le hace desde Taller4.java
     String nombre;
     static int totalPersonas;
-    
     static {
         totalPersonas = 0;
-        cedula = 3;
     }
 
+    public Persona() {    // Agregamos un constructor que no recibe parametros
+    	this.cedula = 0;
+    	totalPersonas++;
+    }
+    
     public Persona(long cedula, String nombre) {
         this.cedula = cedula;
         this.nombre = nombre;
@@ -30,7 +33,8 @@ public class Persona {
     }
 
     public Persona(String nombre) {
-        this.nombre = "";
+        this.nombre = nombre;
+        this.cedula = 1; //Agregamos la siguiente asignación 
         totalPersonas++;
     }
     
