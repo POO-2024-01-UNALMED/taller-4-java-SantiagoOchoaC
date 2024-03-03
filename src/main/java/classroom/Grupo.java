@@ -5,7 +5,7 @@ public class Grupo {
     public Persona[] estudiantes;
     public Persona profesor;
     public Asignatura asignatura;
-    public final int codigo = 0;
+    public final int codigo; // No podemos asignarle un valor debido a que sera modificado en otros constructores y metodos. 
     public String horario;
 
     public Grupo(Persona[] estudiantes, Persona profesor, Asignatura asignatura, int codigo, String horario) {
@@ -17,12 +17,13 @@ public class Grupo {
     }
 
     public Grupo(int cantidadEstudiantes, Persona profesor, Asignatura asignatura, int codigo, String horario) {
-        Persona[] personas = new Persona[cantidadEstudiantes];
-        this(personas, profesor, asignatura, codigo, horario);
+    	this(new Persona[cantidadEstudiantes], profesor, asignatura, codigo, horario);        
+    	// Persona[] personas = new Persona[cantidadEstudiantes]; Corrección 
     }
-
+    
     public Grupo(Persona[] estudiantes, Persona profesor, Asignatura asignatura) {
-        this.estudiantes = estudiantes;
+        this.codigo = 0; // Asignamos este valor por defecto 
+		this.estudiantes = estudiantes;
         this.profesor = profesor;
         this.asignatura = asignatura;
     }
