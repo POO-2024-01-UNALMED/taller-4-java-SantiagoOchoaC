@@ -5,7 +5,7 @@ public enum Tipo {
 	
 	private int codigo;
 	
-	Tipo(int codigo) { // Cambiamos la visibilidad y eliminamos el otro parametro que no es necesario. 
+	private Tipo(int codigo) { // Cambiamos la visibilidad y eliminamos el otro parametro que no es necesario. 
 		this.codigo = codigo;
 
 	}
